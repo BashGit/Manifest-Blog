@@ -1,0 +1,5 @@
+package blog
+
+class MainBlogPage {
+
+}
