@@ -1,0 +1,17 @@
+*target*
+*.jar
+*.war
+*.ear
+*.gar
+*.class
+
+.settings/
+.project
+.metadata
+.loadpath
+bin/**
+tmp/**
+local.properties
+.classpath
+
+*.launch
