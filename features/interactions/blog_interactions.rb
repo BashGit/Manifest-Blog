@@ -3,10 +3,7 @@ def login
 	on_page(Login).login
 end
 
-def complete_entry_form
-	
-end
-
 def publish_new_post
+	visit_page Blog_Entry_Form
 	on_page(Blog_Entry_Form).complete_entry_form
 end

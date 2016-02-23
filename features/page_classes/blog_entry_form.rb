@@ -1,9 +1,11 @@
 class Blog_Entry_Form
 	include PageObject
 	
+	page_url 'http://localhost:8080/blog/blogEntry/create'
+	
 	text_field(:title, :id => 'title')
-	text_area(:entry, :id => 'entry')
-	button(:submit, :name => 'submit')
+	text_field(:entry, :id => 'entry')
+	button(:submit, :type => 'submit')
 	
 def complete_entry_form
 	self.title = 'Top 10 Reasons why I\'m the Smartest Blogger Ever!'
