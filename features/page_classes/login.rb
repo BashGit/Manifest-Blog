@@ -1,15 +1,15 @@
-class Login_Page
+class Login
 	include PageObject
 	
-	page_url "localhost:8080/blog"
+	page_url "http://localhost:8080/blog/login/auth?format="
 	
 	text_field(:username, :id => 'username')
 	text_field(:password, :id => 'password')
-	button(:submit, :name => 'submit')
+	button(:submit, :type => 'submit')
 	
 	def login 
-		self.username = 'user'
-		self.password = 'user'
+		self.username = 'blogger'
+		self.password = 'blog'
 		self.submit
 	end
 end

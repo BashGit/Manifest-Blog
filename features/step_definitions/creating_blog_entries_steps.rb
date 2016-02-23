@@ -3,7 +3,7 @@ Given(/^I am logged in as a blogger$/) do
 end
 
 When(/^I publish a new blog post$/) do
-	publish_post
+	publish_new_post
 end
 
 Then(/^I am notified that the blog post was successfully added$/) do
