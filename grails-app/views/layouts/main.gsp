@@ -17,7 +17,7 @@
 		<g:layoutHead/>
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://www.manifestcorp.com"><asset:image src="Manifest_225x79.jpeg" alt="Grails"/></a></div>
+		<div id="grailsLogo" role="banner"><a href="http://www.manifestcorp.com"><asset:image src="Manifest_225x79.jpeg" alt="Grails"/></a>Welcome to the Manifest Blog</div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>

@@ -59,7 +59,7 @@ grails {
     }
 }
 
-
+grails.web.url.converter="hyphenated"
 grails.converters.encoding = "UTF-8"
 // scaffolding templates configuration
 grails.scaffolding.templates.domainSuffix = 'Instance'
@@ -125,7 +125,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                              ['permitAll'],
 	'/index':                         ['permitAll'],
 	'/index.gsp':                     ['permitAll'],
-	'/blogEntry/**':			      ['isAuthenticated()'],
+	'/blog-entry/**':			      ['isAuthenticated()'],
 	'/**/js/**':                      ['permitAll'],
 	'/**/css/**':                     ['permitAll'],
 	'/**/images/**':                  ['permitAll'],
