@@ -6,10 +6,7 @@ class BlogEntry {
 	String entry
 	Date dateCreated
 	Date lastUpdated
-	
-	@Override String toString() {
-		title
-	}
+
 	
     static constraints = {
 		title(blank:false, nullable: false)
