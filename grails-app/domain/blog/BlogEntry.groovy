@@ -4,6 +4,8 @@ class BlogEntry {
 	
 	String title
 	String entry
+	Date dateCreated
+	Date lastUpdated
 	
 	@Override String toString() {
 		title
