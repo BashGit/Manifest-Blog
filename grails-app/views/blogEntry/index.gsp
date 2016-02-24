@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'blogEntry.label', default: 'BlogEntry')}" />
+		<g:set var="entityName" value="${message(code: 'blogEntry.label', default: 'Blog Entry')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
@@ -13,6 +13,7 @@
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<li><a href="blog/logout">Logout</a></li>
 			</ul>
 		</div>
 		<div id="list-blogEntry" class="content scaffold-list" role="main">
@@ -36,7 +37,7 @@
 				</thead>
 				<tbody>
 				<g:each in="${blogEntryInstanceList}" status="i" var="blogEntryInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					<tr class="${(i % 2) == 0 ? 'even ' + i : 'odd ' + i}">
 					
 						<td><g:link action="show" id="${blogEntryInstance.id}">${fieldValue(bean: blogEntryInstance, field: "title")}</g:link></td>
 					
