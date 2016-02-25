@@ -31,6 +31,7 @@ grails.mime.types = [ // the first one is the default format
     xml:           ['text/xml', 'application/xml']
 ]
 
+//Allows GET logout calls. Decreases security
 grails.plugin.springsecurity.logout.postOnly=false
 
 // URL Mapping Cache Max Size, defaults to 5000

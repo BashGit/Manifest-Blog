@@ -6,7 +6,6 @@ class BlogEntry {
 	String entry
 	Date dateCreated
 	Date lastUpdated
-
 	
     static constraints = {
 		title(blank:false, nullable: false)
