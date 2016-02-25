@@ -1,4 +1,4 @@
-Given(/^I visit the blog for my favorite blogger$/) do
+Given(/^I visit my favorite blogger\'s blog$/) do
 	visit_favorite_blogger
 end
 
