@@ -1,3 +1,4 @@
+#Scenario View Recent Blog Posts
 Given(/^my favorite blogger has been very active$/) do
 	visit_page Recent_Blog_Posts
 	expect(on_page(Recent_Blog_Posts).check_for_ten_recent_posts).to eq(11) #one row is the title, entry, etc...

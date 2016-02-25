@@ -37,7 +37,7 @@ class BlogEntryController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'blogEntry.label', default: 'Blog Entry'), blogEntryInstance.id])
+                flash.message = message(code: 'custom.created.message', args: [message(code: 'blogEntry.label', default: ''), blogEntryInstance.title])
                 redirect blogEntryInstance
             }
             '*' { respond blogEntryInstance, [status: CREATED] }
@@ -64,7 +64,7 @@ class BlogEntryController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'BlogEntry.label', default: 'Blog Entry'), blogEntryInstance.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'BlogEntry.label', default: ''), blogEntryInstance.title])
                 redirect blogEntryInstance
             }
             '*'{ respond blogEntryInstance, [status: OK] }
@@ -83,7 +83,7 @@ class BlogEntryController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'BlogEntry.label', default: 'Blog Entry'), blogEntryInstance.id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'BlogEntry.label', default: 'Blog Entry'), blogEntryInstance.title])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }

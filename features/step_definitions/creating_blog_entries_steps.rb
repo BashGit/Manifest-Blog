@@ -1,7 +1,3 @@
-After do
-	delete_test_post
-end
-
 Given(/^I am logged in as a blogger$/) do
 	login_blogger
 end

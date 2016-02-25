@@ -28,3 +28,16 @@ def delete_test_post
 	sleep 1
 	@browser.alert.ok
 end
+
+def visit_favorite_blogger
+	visit_page Recent_Blog_Posts
+end
+
+def select_favorite_blog_post
+	@browser.td(:id => '0').click
+end
+
+def get_blog_post_url
+	@browser.url
+end
+
