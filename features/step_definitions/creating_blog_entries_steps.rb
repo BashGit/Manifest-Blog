@@ -3,7 +3,7 @@ After do
 end
 
 Given(/^I am logged in as a blogger$/) do
-	login
+	login_blogger
 end
 
 When(/^I publish a new blog post$/) do
@@ -16,6 +16,6 @@ Then(/^I am notified that the blog post was successfully added$/) do
 end
 
 And(/^the newly added blog post is at the top of the recent posts list$/) do
-	most_recent_blog_post = view_recent_posts
+	most_recent_blog_post = view_newest_post
 	expect(most_recent_blog_post).to include 'Top 10 Reasons why I\'m the Smartest Blogger Ever!'
 end

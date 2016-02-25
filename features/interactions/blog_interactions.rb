@@ -1,6 +1,11 @@
-def login 
+def login_blogger 
 	visit_page Login
-	on_page(Login).login
+	on_page(Login).login_blogger
+end
+
+def login_user
+	visit_page Login	
+	on_page(Login).login_user
 end
 
 def publish_new_post
@@ -12,7 +17,7 @@ def read_publish_response
 	on_page(Entry_Created).response
 end
 
-def view_recent_posts
+def view_newest_post
 	visit_page(Recent_Blog_Posts)
 	on_page(Recent_Blog_Posts).top_blog_post
 end

@@ -35,7 +35,7 @@
 					
 					</tr>
 				</thead>
-				<tbody>
+				<tbody id="tableBody">
 				<g:each in="${blogEntryInstanceList}" status="i" var="blogEntryInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
@@ -43,7 +43,7 @@
 					
 						<td>${fieldValue(bean: blogEntryInstance, field: "entry")}</td>
 					
-						<td><g:formatDate date="${blogEntryInstance.dateCreated}" /></td>
+						<td class="dateCreated"><g:formatDate date="${blogEntryInstance.dateCreated}" /></td>
 					
 						<td><g:formatDate date="${blogEntryInstance.lastUpdated}" /></td>
 					
