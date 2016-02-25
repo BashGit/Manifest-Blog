@@ -13,6 +13,6 @@ class BlogEntry {
     }
 	
 	static mapping = {
-		sort lastUpdated: 'desc'
+		sort dateCreated: 'desc'
 	}
 }
