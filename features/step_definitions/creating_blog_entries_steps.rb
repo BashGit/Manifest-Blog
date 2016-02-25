@@ -1,3 +1,7 @@
+After do
+	delete_test_post
+end
+
 Given(/^I am logged in as a blogger$/) do
 	login
 end
@@ -12,5 +16,6 @@ Then(/^I am notified that the blog post was successfully added$/) do
 end
 
 And(/^the newly added blog post is at the top of the recent posts list$/) do
-	expect(top_blog_post).to be most_recent_blog
+	most_recent_blog_post = view_recent_posts
+	expect(most_recent_blog_post).to include 'Top 10 Reasons why I\'m the Smartest Blogger Ever!'
 end
