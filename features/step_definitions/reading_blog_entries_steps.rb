@@ -4,7 +4,7 @@ Given(/^my favorite blogger has been very active$/) do
 	expect(on_page(Recent_Blog_Posts).check_for_ten_recent_posts).to eq(11) #one row is the title, entry, etc...
 end
 
-When(/^I visit the blog for my favorite blogger$/) do
+When(/^I visit my favorite blogger\'s blog$/) do
 	visit_page Login
 	on_page(Login).login_user
 end
