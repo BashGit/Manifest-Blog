@@ -83,7 +83,7 @@ class BlogEntryController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'BlogEntry.label', default: 'Blog Entry'), blogEntryInstance.id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'BlogEntry.label', default: 'Blog Entry'), blogEntryInstance.title])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }

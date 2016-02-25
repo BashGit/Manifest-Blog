@@ -7,7 +7,10 @@ class UrlMappings {
             }
         }
 
+		"/blog-entry/$title?/$dateCreated" (controller:"blogEntry", action:"show")
+		
         "/" (controller:"blogEntry", action:"index")
         "500"(view:'/error')
+		
 	}
 }
