@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'blogEntry.label', default: 'BlogEntry')}" />
+		<g:set var="entityName" value="${message(code: 'blogEntry.label', default: 'Blog Entry')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
@@ -17,7 +17,7 @@
 			</ul>
 		</div>
 		<div id="show-blogEntry" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+			<h1><g:message code="custom.show.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
