@@ -14,5 +14,9 @@ class BlogEntry {
 	
 	static mapping = {
 		sort dateCreated: 'desc'
+		table 'entries'
 	}
+	
+	static hasMany = [comment:Comment]
+	
 }
