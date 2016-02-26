@@ -41,17 +41,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${blogEntryInstance?.comment}">
-				<li class="fieldcontain">
-					<span id="comment-label" class="property-label"><g:message code="blogEntry.comment.label" default="Comment" /></span>
-					
-						<g:each in="${blogEntryInstance.comment}" var="c">
-						<span class="property-value" aria-labelledby="comment-label"><g:link controller="comment" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${blogEntryInstance?.dateCreated}">
 				<li class="fieldcontain">
 					<span id="dateCreated-label" class="property-label"><g:message code="blogEntry.dateCreated.label" default="Date Created" /></span>
@@ -66,6 +55,33 @@
 					<span id="lastUpdated-label" class="property-label"><g:message code="blogEntry.lastUpdated.label" default="Last Updated" /></span>
 					
 						<span class="property-value" aria-labelledby="lastUpdated-label"><g:formatDate date="${blogEntryInstance?.lastUpdated}" /></span>
+					
+				</li>
+				</g:if>
+				
+				<li class="fieldcontain ${hasErrors(bean: blogEntryInstance, field: 'comment', 'error')} ">
+					<label for="comment">
+						<g:message code="blogEntry.comment.label" default="Comment" />
+						
+					</label>
+					
+				<ul class="one-to-many">
+				<g:each in="${blogEntryInstance?.comment?}" var="c">
+				    <li><g:link controller="comment" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
+				</g:each>
+				<li class="add">
+				<g:link controller="comment" action="create" params="['blogEntry.id': blogEntryInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'comment.label', default: 'Comment')])}</g:link>
+				</li>
+				</ul>
+				</li>
+				
+				<g:if test="${blogEntryInstance?.comment}">
+				<li class="fieldcontain">
+					<span id="comment-label" class="property-label"><g:message code="blogEntry.comment.label" default="Comment" /></span>
+					
+						<g:each in="${blogEntryInstance.comment}" var="c">
+						<span class="property-value" aria-labelledby="comment-label"><g:link controller="comment" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>
