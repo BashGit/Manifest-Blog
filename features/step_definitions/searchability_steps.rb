@@ -9,6 +9,6 @@ end
 @wip
 Then(/^the url should contain information about the post$/) do
 	blog_post_url = get_blog_post_url
-	expect(blog_post_url).to eq 'http://localhost:8080/blog/blog-entry/show/131'
+	expect(blog_post_url).to eq 'http://localhost:8080/blog/blog-entry/131/TACOS-TACOS-TACOS/2016-02-25'
 	#TODO change show to be entry title and number to be entry dateCreated
 end
