@@ -39,7 +39,7 @@
 				<g:each in="${blogEntryInstanceList}" status="i" var="blogEntryInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td id="${i}"><g:link action="show" params="[title:blogEntryInstance.title, dateCreated:blogEntryInstance.dateCreated]" id="${blogEntryInstance.id}">${fieldValue(bean: blogEntryInstance, field: "title")}</g:link></td>
+						<td id="${i}"><g:link action="show" params="[title:blogEntryInstance.title.replaceAll("\\s", "-"), dateCreated:blogEntryInstance.dateCreated.format("yyy-MM-dd")]" id="${blogEntryInstance.id}">${fieldValue(bean: blogEntryInstance, field: "title")}</g:link></td>
 					
 						<td>${fieldValue(bean: blogEntryInstance, field: "entry")}</td>
 					
