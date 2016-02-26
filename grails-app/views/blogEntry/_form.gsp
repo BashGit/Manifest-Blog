@@ -20,3 +20,21 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: blogEntryInstance, field: 'comment', 'error')} ">
+	<label for="comment">
+		<g:message code="blogEntry.comment.label" default="Comment" />
+		
+	</label>
+	
+<ul class="one-to-many">
+<g:each in="${blogEntryInstance?.comment?}" var="c">
+    <li><g:link controller="comment" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="comment" action="create" params="['blogEntry.id': blogEntryInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'comment.label', default: 'Comment')])}</g:link>
+</li>
+</ul>
+
+
+</div>
+

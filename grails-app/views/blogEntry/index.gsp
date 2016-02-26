@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'blogEntry.label', default: 'Blog Entry')}" />
+		<g:set var="entityName" value="${message(code: 'blogEntry.label', default: 'BlogEntry')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
@@ -13,7 +13,6 @@
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-				<li><a href="blog/logout"/>Logout</a></li>
 			</ul>
 		</div>
 		<div id="list-blogEntry" class="content scaffold-list" role="main">
@@ -35,15 +34,15 @@
 					
 					</tr>
 				</thead>
-				<tbody id="tableBody">
+				<tbody>
 				<g:each in="${blogEntryInstanceList}" status="i" var="blogEntryInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td id="${i}"><g:link action="show" params="[title:blogEntryInstance.title.replaceAll("\\s", "-"), dateCreated:blogEntryInstance.dateCreated.format("yyy-MM-dd")]" id="${blogEntryInstance.id}">${fieldValue(bean: blogEntryInstance, field: "title")}</g:link></td>
+						<td><g:link action="show" id="${blogEntryInstance.id}">${fieldValue(bean: blogEntryInstance, field: "title")}</g:link></td>
 					
 						<td>${fieldValue(bean: blogEntryInstance, field: "entry")}</td>
 					
-						<td class="dateCreated"><g:formatDate date="${blogEntryInstance.dateCreated}" /></td>
+						<td><g:formatDate date="${blogEntryInstance.dateCreated}" /></td>
 					
 						<td><g:formatDate date="${blogEntryInstance.lastUpdated}" /></td>
 					

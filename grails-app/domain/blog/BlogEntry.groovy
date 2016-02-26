@@ -17,6 +17,6 @@ class BlogEntry {
 		table 'entries'
 	}
 	
-	static hasMany = [comments:Comment]
+	static hasMany = [comment:Comment]
 	
 }

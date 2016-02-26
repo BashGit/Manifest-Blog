@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'blogEntry.label', default: 'Blog Entry')}" />
+		<g:set var="entityName" value="${message(code: 'blogEntry.label', default: 'BlogEntry')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
@@ -17,7 +17,7 @@
 			</ul>
 		</div>
 		<div id="show-blogEntry" class="content scaffold-show" role="main">
-			<h1><g:message code="custom.show.label" args="[entityName]" /></h1>
+			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -37,6 +37,17 @@
 					<span id="entry-label" class="property-label"><g:message code="blogEntry.entry.label" default="Entry" /></span>
 					
 						<span class="property-value" aria-labelledby="entry-label"><g:fieldValue bean="${blogEntryInstance}" field="entry"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${blogEntryInstance?.comment}">
+				<li class="fieldcontain">
+					<span id="comment-label" class="property-label"><g:message code="blogEntry.comment.label" default="Comment" /></span>
+					
+						<g:each in="${blogEntryInstance.comment}" var="c">
+						<span class="property-value" aria-labelledby="comment-label"><g:link controller="comment" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>
