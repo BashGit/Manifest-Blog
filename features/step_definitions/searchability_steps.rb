@@ -6,9 +6,9 @@ When(/^I choose a blog post$/) do
 	select_favorite_blog_post
 end
 
-@wip
 Then(/^the url should contain information about the post$/) do
-	blog_post_url = get_blog_post_url
-	expect(blog_post_url).to eq 'http://localhost:8080/blog/blog-entry/131/TACOS-TACOS-TACOS/2016-02-25'
-	#TODO change show to be entry title and number to be entry dateCreated
+	actual_blog_post_url = get_blog_post_url
+	#expected_url = calculate_expected_url
+	#expect(actual_blog_post_url).to eq 'expected_url'
+	expect(actual_blog_post_url).to eq 'http://localhost:8080/blog/blog-entry/1/Hello-World/2016-02-26'
 end

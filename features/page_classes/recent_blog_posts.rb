@@ -3,7 +3,7 @@ class Recent_Blog_Posts
 	
 	page_url 'http://localhost:8080/blog/'
 	
-	cell(:top_blog_post, :id => '0')
+	div(:top_blog_post, :id => '0')
 	
 	def check_for_ten_recent_posts
 		return browser.table.rows.length

@@ -34,10 +34,20 @@ def visit_favorite_blogger
 end
 
 def select_favorite_blog_post
-	@browser.td(:id => '0').click
+	@browser.div(:id => '0').a.click
 end
 
 def get_blog_post_url
 	@browser.url
+end
+
+def calculate_expected_url
+	#expected_url = get_blog_post_url_beginning(actual_blog_post_url)
+	expected_url = 'http://localhost:8080/'
+	expected_url += 'blog/blog-entry/'
+	expected_url += get_post_id + '/'
+	expected_url += get_post_title + '/'
+	expected_url += get_post_date
+	#http://localhost:8080/blog/blog-entry/1/Hello-World/2016-02-26
 end
 

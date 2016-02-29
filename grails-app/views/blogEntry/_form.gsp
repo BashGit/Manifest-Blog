@@ -20,6 +20,7 @@
 
 </div>
 
+<%--DELETE AFTER ADDING COMMENTS TO SHOW
 <div class="fieldcontain ${hasErrors(bean: blogEntryInstance, field: 'comment', 'error')} ">
 	<label for="comment">
 		<g:message code="blogEntry.comment.label" default="Comment" />
@@ -36,5 +37,4 @@
 </ul>
 
 
-</div>
-
+</div>--%>
