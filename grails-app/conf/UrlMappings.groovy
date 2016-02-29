@@ -9,6 +9,8 @@ class UrlMappings {
 
 		"/blog-entry/$id/$title/$dateCreated" (controller:"blogEntry", action:"show")
 		
+		
+		
         "/" (controller:"blogEntry", action:"index")
         "500"(view:'/error')
 		

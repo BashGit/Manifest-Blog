@@ -17,6 +17,7 @@ class CommentController {
 
     def show(Comment commentInstance) {
         respond commentInstance
+		//redirect(controller: 'blogEntry', action:'show')
     }
 
     def create() {

@@ -58,11 +58,17 @@
 					</li>
 					</g:if>
 					
-					<li class="one-to-many add">
-					<g:link controller="comment" action="create" params="['blogEntry.id': blogEntryInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'comment.label', default: 'Comment')])}</g:link>
-					</li>
-					
+					<div id="comments">
 					<h4>Comments</h4>
+					<g:form url="[resource:commentInstance, controller:'comment', action:'save']" >
+						<fieldset class="form">
+							<g:render template="/comment/form"/>
+						</fieldset>
+						<fieldset class="buttons">
+							<g:submitButton name="save" class="save" value="${message(code: 'custom.button.createComment.label', default: '')}" />
+						</fieldset>
+					</g:form>
+					
 					<g:each in="${blogEntryInstance?.comment?}" var="c">
 					    <ul id="${c.id}">
 					    	<g:link controller="comment" action="show" id="${c.id}">${c.commenter}</g:link>
@@ -72,6 +78,7 @@
 							</br>
 						</ul>
 					</g:each>
+					</div>
 				
 				</ol>
 				<g:form url="[resource:blogEntryInstance, action:'delete']" method="DELETE">
