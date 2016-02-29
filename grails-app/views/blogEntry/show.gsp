@@ -58,27 +58,19 @@
 					</li>
 					</g:if>
 					
-					<ul class="one-to-many">
-					<li class="add">
+					<li class="one-to-many add">
 					<g:link controller="comment" action="create" params="['blogEntry.id': blogEntryInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'comment.label', default: 'Comment')])}</g:link>
 					</li>
+					
+					<h4>Comments</h4>
 					<g:each in="${blogEntryInstance?.comment?}" var="c">
-					    <li><g:link controller="comment" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
+					    <ul id="${c.id}">
+							${c.commenter} said...</br>
+							${c.content} </br>
+							on ${c.dateCreated} </br>
+							</br>
+						</ul>
 					</g:each>
-					
-					</ul>
-					</li>
-					
-					<%--<g:if test="${blogEntryInstance?.comment}">
-					<li class="fieldcontain">
-						<span id="comment-label" class="property-label"><g:message code="blogEntry.comment.label" default="Comment" /></span>
-						
-							<g:each in="${blogEntryInstance.comment}" var="c">
-							<span class="property-value" aria-labelledby="comment-label"><g:link controller="comment" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
-							</g:each>
-						
-					</li>
-					</g:if>--%>
 				
 				</ol>
 				<g:form url="[resource:blogEntryInstance, action:'delete']" method="DELETE">
