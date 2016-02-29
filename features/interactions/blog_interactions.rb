@@ -51,3 +51,6 @@ def calculate_expected_url
 	#http://localhost:8080/blog/blog-entry/1/Hello-World/2016-02-26
 end
 
+def get_post_id
+	
+end

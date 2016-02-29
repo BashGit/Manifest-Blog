@@ -15,7 +15,7 @@
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
-		<div id="show-blogEntry" class="content scaffold-show" role="main">
+		<div id="show-blogEntry ${blogEntryInstance.id}" class="content scaffold-show" role="main">
 			<h1><g:message code="custom.show.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
@@ -65,16 +65,17 @@
 					</label>
 					
 				<ul class="one-to-many">
-				<g:each in="${blogEntryInstance?.comment?}" var="c">
-				    <li><g:link controller="comment" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
-				</g:each>
 				<li class="add">
 				<g:link controller="comment" action="create" params="['blogEntry.id': blogEntryInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'comment.label', default: 'Comment')])}</g:link>
 				</li>
+				<g:each in="${blogEntryInstance?.comment?}" var="c">
+				    <li><g:link controller="comment" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
+				</g:each>
+				
 				</ul>
 				</li>
 				
-				<g:if test="${blogEntryInstance?.comment}">
+				<%--<g:if test="${blogEntryInstance?.comment}">
 				<li class="fieldcontain">
 					<span id="comment-label" class="property-label"><g:message code="blogEntry.comment.label" default="Comment" /></span>
 					
@@ -85,7 +86,7 @@
 				</li>
 				</g:if>
 			
-			</ol>
+			--%></ol>
 			<g:form url="[resource:blogEntryInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
 					<g:link class="edit" action="edit" resource="${blogEntryInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>

@@ -13,7 +13,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: commentInstance, field: 'content', 'error')} required">
 	<label for="content">
-		<g:message code="comment.content.label" default="Content" />
+		<g:message code="comment.content.label" default="Comment" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textArea name="content" cols="40" rows="5" maxlength="1000" required="" value="${commentInstance?.content}"/>
