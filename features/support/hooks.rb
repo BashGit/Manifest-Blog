@@ -11,3 +11,7 @@ end
 After do |scenario|
 	@browser.close
 end
+
+After('@delete_test_post') do |scenario|
+	delete_test_post
+end
