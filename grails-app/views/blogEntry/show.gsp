@@ -65,7 +65,8 @@
 					<h4>Comments</h4>
 					<g:each in="${blogEntryInstance?.comment?}" var="c">
 					    <ul id="${c.id}">
-							${c.commenter} said...</br>
+					    	<g:link controller="comment" action="show" id="${c.id}">${c.commenter}</g:link>
+							said...</br>
 							${c.content} </br>
 							on ${c.dateCreated} </br>
 							</br>
