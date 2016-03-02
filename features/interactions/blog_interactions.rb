@@ -68,6 +68,7 @@ def delete_test_comment
 	@browser.button(:class => 'delete').click
 	sleep 1
 	@browser.alert.ok
+end
 
 def get_newest_post_title
 	visit_page Recent_Blog_Posts
