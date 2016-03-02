@@ -4,9 +4,8 @@ Given(/^my favorite blogger has been very active$/) do
 	expect(on_page(Recent_Blog_Posts).check_if_ten_posts_exist).to be_truthy
 end
 
-When(/^I visit my favorite blogger\'s blog$/) do
-	visit_page Login
-	on_page(Login).login_user
+When(/^I visit the blog for my favorite blogger$/) do
+	login_user
 end
 
 Then(/^I should see a summary of my favorite blogger\'s 10 most recent posts in reverse order$/) do 
@@ -14,9 +13,7 @@ Then(/^I should see a summary of my favorite blogger\'s 10 most recent posts in 
 end
 
 #Scenario View A Blog Post
-Given (/^I visit a blog of my favorite blogger$/) do
-	visit_favorite_blogger
-end
+#Given (/^I visit the blog for my favorite blogger$/) used previously in reading feature
 
 When (/^I pick a blog post$/) do
 	select_favorite_blog_post
@@ -27,14 +24,12 @@ Then (/^I should see the blog post$/) do
 end
 
 #Scenario Search for Blog Post
-Given (/^I visit the blog for my most favorite blogger$/) do
-	expect(false).to be_true
-end
+#Given (/^I visit the blog for my favorite blogger$/) used previously in reading feature
 
 When (/^I search for a blog post$/) do
-	expect(false).to be_true
+	search_for_hello_world_blog
 end
 
 Then (/^I should see posts with that value in the title$/) do
-	expect(false).to be_true
+	expect(check_that_search_returned_hello_world).to be_truthy
 end

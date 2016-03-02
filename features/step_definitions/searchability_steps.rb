@@ -1,6 +1,4 @@
-Given(/^I visit the blog for my favorite blogger$/) do
-	visit_favorite_blogger
-end
+#Given(/^I visit the blog for my favorite blogger$/) used in reading feature
 
 When(/^I choose a blog post$/) do
 	select_favorite_blog_post

@@ -17,9 +17,8 @@ class BlogEntryController {
 					ilike("title", "%${params.query}%")
 			}
 			respond results
-			
-		}
-		
+			params.query = null
+		}		
     }
 
     def show(BlogEntry blogEntryInstance) {

@@ -9,11 +9,13 @@ Feature: View Blog Entries
     Then I should see a summary of my favorite blogger's 10 most recent posts in reverse order
 
   Scenario: View a Blog Post
-    Given I visit a blog of my favorite blogger
+    Given I visit the blog for my favorite blogger
     When I pick a blog post
     Then I should see the blog post
 
+  @create_test_post
+  @delete_test_post
   Scenario: Search for Blog Post
-    Given I visit the blog for my most favorite blogger
+    Given I visit the blog for my favorite blogger
     When I search for a blog post
     Then I should see posts with that value in the title
