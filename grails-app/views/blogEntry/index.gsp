@@ -38,7 +38,7 @@
 					  		<div id="${i}" class="entry">
 					   		<h2><g:link action="show" params="[title:blogEntryInstance.title.replaceAll('\\s', '-'), dateCreated:blogEntryInstance.dateCreated.format('yyy-MM-dd')]" id="${blogEntryInstance.id}">${blogEntryInstance.title}</g:link></h2>
 					   		<span class="entry-date">Date Created: ${blogEntryInstance.dateCreated}</span>
-					   		<p><pre>${blogEntryInstance.entry}</pre></p>               
+					   		<p><pre class="summary">${blogEntryInstance.entry}</pre></p>               
 					  		</div>  
 					  		<hr>
 					 	</g:each>
@@ -49,5 +49,13 @@
 				</div>
 			
 		</div>
+		
+		<script>
+			$(document).ready(function(){
+				$("pre.summary").text(function(index, currentText) {
+					return currentText.substr(0, 200);});
+			});
+		</script>
+		
 	</body>
 </html>
