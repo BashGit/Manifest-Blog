@@ -29,7 +29,7 @@
 					<li class="fieldcontain">
 						<span id="entry-label" class="property-label"><g:message code="blogEntry.entry.label" default="Entry" /></span>
 						
-							<span class="property-value" aria-labelledby="entry-label"><g:fieldValue bean="${blogEntryInstance}" field="entry"/></span>
+							<span class="property-value" aria-labelledby="entry-label"><pre><g:fieldValue bean="${blogEntryInstance}" field="entry"/></pre></span>
 						
 					</li>
 					</g:if>
