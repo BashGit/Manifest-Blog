@@ -12,4 +12,7 @@
 
 ol {
 	list-style-type: none;
+
+.hidden {
+	display: none;
 }

@@ -52,20 +52,14 @@
 					</li>
 					</g:if>
 					
-					<li class="one-to-many add">
-					<g:link controller="comment" action="create" params="['blogEntry.id': blogEntryInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'comment.label', default: 'Comment')])}</g:link>
-					</li>
+					<div id="addComment">
+						<g:render template="/comment/addCommentForm"/>
+					</div>
 					
-					<h4>Comments</h4>
-					<g:each in="${blogEntryInstance?.comment?}" var="c">
-					    <ul id="${c.id}">
-					    	<g:link controller="comment" action="show" id="${c.id}">${c.commenter}</g:link>
-							said...</br>
-							${c.content} </br>
-							on ${c.dateCreated} </br>
-							</br>
-						</ul>
-					</g:each>
+					<div id="comments">
+						<g:render template="/comment/commentsForm"/>
+						<%--<g:render view="/comment/renderComments"/>
+					--%></div>
 				
 				</ol>
 				<g:form url="[resource:blogEntryInstance, action:'delete']" method="DELETE">

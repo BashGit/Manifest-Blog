@@ -41,6 +41,10 @@ def get_blog_post_url
 	@browser.url
 end
 
+def find_comments
+	on_page(Recent_Blog_Posts).comments
+end
+
 def calculate_expected_url
 	#expected_url = get_blog_post_url_beginning(actual_blog_post_url)
 	expected_url = 'http://localhost:8080/'

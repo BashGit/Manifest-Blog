@@ -20,12 +20,10 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: commentInstance, field: 'entry', 'error')} required">
+<div class="hidden fieldcontain ${hasErrors(bean: commentInstance, field: 'entry', 'error')} required">
 	<label for="entry">
 		<g:message code="comment.entry.label" default="Entry" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="entry" name="entry.id" from="${blog.BlogEntry.list()}" optionKey="id" required="" value="${commentInstance?.entry?.id}" class="many-to-one"/>
-
+	<g:textField id="entry" name="entry.id" value="${blogEntryInstance.id}"/>
 </div>
-
