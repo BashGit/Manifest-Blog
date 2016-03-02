@@ -17,19 +17,13 @@
 				</div>
 			</div>
 			<div id="show-blogEntry" class="content scaffold-show" role="main">
-				<h1><g:message code="custom.show.label" args="[entityName]" /></h1>
+				<g:if test="${blogEntryInstance?.title}">
+					<h1><span id="blog-title" class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${blogEntryInstance}" field="title"/></span></h1>
+				</g:if>
 				<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 				</g:if>
 				<ol class="property-list blogEntry">
-				
-					<g:if test="${blogEntryInstance?.title}">
-					<li class="fieldcontain">
-						<span id="title-label" class="property-label"><g:message code="blogEntry.title.label" default="Title" /></span>
-						
-							<span class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${blogEntryInstance}" field="title"/></span>
-					</li>
-					</g:if>
 				
 					<g:if test="${blogEntryInstance?.entry}">
 					<li class="fieldcontain">
