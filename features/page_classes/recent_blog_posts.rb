@@ -5,18 +5,22 @@ class Recent_Blog_Posts
 	
 	div(:top_blog_post, :id => '0')
 	
-	def check_for_ten_recent_posts
-		return browser.table.rows.length
+	def check_if_ten_posts_exist
+		return browser.div(:id => 9)
 	end
 	
 	def recent_posts_are_descending
-		for i in 1..9
-			#puts DateTime.parse(browser.table.tr(:index => i).cell(:index => 2).text)
-			newer = DateTime.parse(browser.table.tr(:index => i).cell(:index => 2).text)
-			older = DateTime.parse(browser.table.tr(:index => (i + 1)).cell(:index => 2).text)
+		for i in 0..8 do
+			newer_num = i.to_s
+			older_num = (i + 1).to_s
+			
+			newer = DateTime.parse(browser.element(:xpath => "//div[@id="+newer_num+"]").span.text.sub(/Date Created: /, ''))
+			older = DateTime.parse(browser.element(:xpath => "//div[@id="+older_num+"]").span.text.sub(/Date Created: /, ''))
+			
 			if(older > newer)
 				return false
 			end
+			
 		end
 		return true
 	end

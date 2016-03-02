@@ -68,4 +68,13 @@ def delete_test_comment
 	@browser.button(:class => 'delete').click
 	sleep 1
 	@browser.alert.ok
+
+def get_newest_post_title
+	visit_page Recent_Blog_Posts
+	return @browser.div(:id => '0').h2.text
+end
+
+def get_current_blog_title
+	select_favorite_blog_post
+	@browser.h1.text
 end

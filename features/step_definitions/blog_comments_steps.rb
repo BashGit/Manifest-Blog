@@ -1,4 +1,4 @@
-#Given (^I visit the blog for my favorite blogger$/) is in the searchability_steps file
+#Given (/^I visit the blog for my favorite blogger$/) is in the searchability_steps file
 
 #When (/^I choose a blog post$/) is in the searchability_steps file
 
