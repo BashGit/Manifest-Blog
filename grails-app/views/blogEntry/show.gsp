@@ -64,8 +64,7 @@
 					
 					<div id="comments">
 						<g:render template="/comment/commentsForm"/>
-						<%--<g:render view="/comment/renderComments"/>
-					--%></div>
+					</div>
 				
 				</ol>
 				<g:form url="[resource:blogEntryInstance, action:'delete']" method="DELETE">

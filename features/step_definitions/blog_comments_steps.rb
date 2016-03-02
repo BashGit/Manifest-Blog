@@ -8,7 +8,8 @@ Then (/^I should see comments left by other readers$/) do
 end
 
 Given (/^I am reading a blog post from my favorite blogger$/) do
-	view_newest_post
+	visit_favorite_blogger
+	select_favorite_blog_post
 end
 
 When (/^I add my genius comment to the blog post$/) do
@@ -16,5 +17,8 @@ When (/^I add my genius comment to the blog post$/) do
 end
 
 Then (/^my genius comment is at the top of the blog post comments$/) do
-	expect(true).to eq false
+	top_comment = get_top_comment
+	expect(top_comment).to include('Adele said...')
+	expect(top_comment).to include('Hello!')
+	delete_test_comment
 end

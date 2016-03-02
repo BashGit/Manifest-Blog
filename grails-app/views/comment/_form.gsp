@@ -7,7 +7,7 @@
 		<g:message code="comment.commenter.label" default="Commenter" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="commenter" required="" value="${commentInstance?.commenter}"/>
+	<g:textField id="commenter" name="commenter" required="" value="${commentInstance?.commenter}"/>
 
 </div>
 
@@ -16,7 +16,7 @@
 		<g:message code="comment.content.label" default="Comment" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="content" cols="40" rows="5" maxlength="1000" required="" value="${commentInstance?.content}"/>
+	<g:textArea id="content" name="content" cols="40" rows="5" maxlength="1000" required="" value="${commentInstance?.content}"/>
 
 </div>
 

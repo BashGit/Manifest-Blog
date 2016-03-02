@@ -40,7 +40,7 @@ class CommentController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'comment.label', default: 'Comment'), commentInstance.id])
-				redirect (controller:"Comment", action:"renderComments", params:[blogEntryInstance: commentInstance.entry])
+				redirect(controller:"Comment", action:"renderComments", params:[blogEntryInstanceId: commentInstance.entry.id])
             }
             '*' { respond commentInstance, [status: CREATED] }
         }
@@ -102,9 +102,10 @@ class CommentController {
         }
     }
 	
-	def renderComments(BlogEntry blogEntry) {
-		List<Comment> allComments = Comment.findAll()
-		//List<Comment> allComments = blogEntry.comment
-		render(template:"commentsForm", model: [allComments: allComments])
+	def renderComments() {
+		def entryInstance = blog.BlogEntry.withCriteria{
+			eq("id", Long.parseLong(params.blogEntryInstanceId))
+		}[0]
+		render(template:"commentsForm", model: [blogEntryInstance: entryInstance])
 	}
 }

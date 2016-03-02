@@ -42,7 +42,7 @@ def get_blog_post_url
 end
 
 def find_comments
-	on_page(Recent_Blog_Posts).comments
+	on_page(Most_Recent_Blog_Post).comments
 end
 
 def calculate_expected_url
@@ -53,4 +53,19 @@ def calculate_expected_url
 	expected_url += get_post_title + '/'
 	expected_url += get_post_date
 	#http://localhost:8080/blog/blog-entry/1/Hello-World/2016-02-26
+end
+
+def add_comment
+	on_page(Most_Recent_Blog_Post).add_comment
+end
+
+def get_top_comment
+	on_page(Most_Recent_Blog_Post).get_top_comment
+end
+
+def delete_test_comment
+	@browser.ul(:id => 'comment0').a(:class => 'commenter').click
+	@browser.button(:class => 'delete').click
+	sleep 1
+	@browser.alert.ok
 end

@@ -4,7 +4,6 @@ class Recent_Blog_Posts
 	page_url 'http://localhost:8080/blog/'
 	
 	div(:top_blog_post, :id => '0')
-	div(:comments, :id => 'comments')
 	
 	def check_for_ten_recent_posts
 		return browser.table.rows.length
