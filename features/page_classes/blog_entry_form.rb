@@ -3,13 +3,13 @@ class Blog_Entry_Form
 	
 	page_url 'http://localhost:8080/blog/blogEntry/create'
 	
-	text_field(:title, :id => 'title')
-	text_field(:entry, :id => 'entry')
-	button(:submit, :type => 'submit')
+	text_field(:title, :name => 'title')
+	text_field(:entry, :name => 'entry')
+	button(:submit, :name => 'create')
 	
 	def complete_entry_form
-		self.title = 'Top 10 Reasons why I\'m the Smartest Blogger Ever!'
-		self.entry = 'It\'s a secret. I\'m not telling why.' 
+		self.title = 'Hello World'
+		self.entry = 'I like to write blog posts!' 
 		self.submit
 	end
 

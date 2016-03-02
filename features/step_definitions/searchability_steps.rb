@@ -8,7 +8,5 @@ end
 
 Then(/^the url should contain information about the post$/) do
 	actual_blog_post_url = get_blog_post_url
-	#expected_url = calculate_expected_url
-	#expect(actual_blog_post_url).to eq 'expected_url'
-	expect(actual_blog_post_url).to eq 'http://localhost:8080/blog/blog-entry/1/Hello-World/2016-02-26'
+	expect(actual_blog_post_url).to match (/http:\/\/localhost:8080\/blog\/blog-entry\/[0-9]+\/Hello-World\/[0-9]+-[0-9]+-[0-9]+$/)
 end

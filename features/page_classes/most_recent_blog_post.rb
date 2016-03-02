@@ -6,6 +6,7 @@ class Most_Recent_Blog_Post
 	text_area(:content, :id => 'content')
 	button(:submit, :type => 'button')
 	ul(:top_comment, :id => 'comment0')
+	button(:delete, :class => 'delete')
 	
 	def add_comment
 		self.commenter = 'Adele'

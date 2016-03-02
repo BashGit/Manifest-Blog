@@ -23,7 +23,8 @@ def view_newest_post
 end
 
 def delete_test_post
-	@browser.back
+	visit_favorite_blogger
+	select_favorite_blog_post
 	@browser.button(:class => 'delete').click
 	sleep 1
 	@browser.alert.ok
