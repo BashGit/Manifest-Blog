@@ -80,3 +80,12 @@ def get_current_blog_title
 	select_favorite_blog_post
 	@browser.h1.text
 end
+
+def search_for_hello_world_blog
+	@browser.text_field.set('Hello World')
+	@browser.send_keys :enter
+end
+
+def check_that_search_returned_hello_world
+	@browser.h2.text.include? "Hello World"
+end
