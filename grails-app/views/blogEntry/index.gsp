@@ -21,6 +21,19 @@
 			
 				<div id="list-blogEntry" class="content scaffold-list" role="main">
 					<div class="list">
+					
+						<g:if test="${flash.message}">
+							<div class="message" role="status">${flash.message}</div>
+						</g:if>
+						<fieldset class="form">
+						    <g:form action="index" method="GET">
+						        <div class="fieldcontain">
+						            <label for="query">Search for blogs:</label>
+						            <g:textField name="query" value="${params.query}" />
+						        </div>
+						    </g:form>
+						</fieldset>
+		
 						<g:each in="${blogEntryInstanceList}" status="i" var="blogEntryInstance">
 					  		<div id="${i}" class="entry">
 					   		<h2><g:link action="show" params="[title:blogEntryInstance.title.replaceAll('\\s', '-'), dateCreated:blogEntryInstance.dateCreated.format('yyy-MM-dd')]" id="${blogEntryInstance.id}">${blogEntryInstance.title}</g:link></h2>
