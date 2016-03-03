@@ -38,7 +38,7 @@
 					<li class="fieldcontain">
 						<span id="dateCreated-label" class="property-label"><g:message code="blogEntry.dateCreated.label" default="Date Created" /></span>
 						
-							<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${blogEntryInstance?.dateCreated}" /></span>
+							<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate format="dd-MM-yyyy hh:mm aa" date="${blogEntryInstance?.dateCreated}" /></span>
 						
 					</li>
 					</g:if>
@@ -47,7 +47,7 @@
 					<li class="fieldcontain">
 						<span id="lastUpdated-label" class="property-label"><g:message code="blogEntry.lastUpdated.label" default="Last Updated" /></span>
 						
-							<span class="property-value" aria-labelledby="lastUpdated-label"><g:formatDate date="${blogEntryInstance?.lastUpdated}" /></span>
+							<span class="property-value" aria-labelledby="lastUpdated-label"><g:formatDate format="dd-MM-yyyy hh:mm aa" date="${blogEntryInstance?.lastUpdated}" /></span>
 						
 					</li>
 					</g:if>

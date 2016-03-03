@@ -45,7 +45,7 @@
 				<li class="fieldcontain">
 					<span id="dateCreated-label" class="property-label"><g:message code="comment.dateCreated.label" default="Date Created" /></span>
 					
-						<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${commentInstance?.dateCreated}" /></span>
+						<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate format="dd-MM-yyyy hh:mm aa" date="${commentInstance?.dateCreated}" /></span>
 					
 				</li>
 				</g:if>
