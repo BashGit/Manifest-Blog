@@ -13,14 +13,10 @@
 */
 
 .summary {
-	/* overflow: hidden;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	-webkit-line-clamp: 5;
-	-webkit-box-orient: vertical; */
-	/* overflow-y: ellipsis;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	white-space: pre-wrap;
 	word-wrap: break-word;
-	overflow: hidden;
-	max-height: 7.2em;
-	line-height: 1.3em; */
+	word-break: break-word;
 }
