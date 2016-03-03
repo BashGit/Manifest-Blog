@@ -55,7 +55,7 @@ class BlogEntryController {
         }
     }
 
-	@Secured(['ROLE_ADMIN]'])
+	@Secured(['ROLE_ADMIN'])
     def edit(BlogEntry blogEntryInstance) {
         respond blogEntryInstance
     }

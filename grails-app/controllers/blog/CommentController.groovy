@@ -17,7 +17,7 @@ class CommentController {
         respond Comment.list(params), model:[commentInstanceCount: Comment.count()]
     }
 
-	@Secured(['ROLE_ADMIN'])
+	@Secured(['ROLE_ADMIN', 'ROLE_USER'])
     def show(Comment commentInstance) {
         respond commentInstance
     }
