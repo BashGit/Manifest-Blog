@@ -11,3 +11,16 @@
 *= require mobile
 *= require_self
 */
+
+.summary {
+	/* overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 5;
+	-webkit-box-orient: vertical; */
+	/* overflow-y: ellipsis;
+	word-wrap: break-word;
+	overflow: hidden;
+	max-height: 7.2em;
+	line-height: 1.3em; */
+}
