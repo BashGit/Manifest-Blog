@@ -35,10 +35,10 @@ class CommentController {
             return
         }
 
-        if (commentInstance.hasErrors()) {
+        /*if (commentInstance.hasErrors()) {
             respond commentInstance.errors, view:'create'
             return
-        }
+        }*/
 
         commentInstance.save flush:true
 
