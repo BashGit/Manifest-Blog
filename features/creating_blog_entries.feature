@@ -4,6 +4,7 @@ Feature: Post a Blog Entry
   I want to be able to post a blog entry
 
   @delete_test_post
+  @logout
   Scenario: New Blog Post
     Given I am logged in as a blogger
     When I publish a new blog post

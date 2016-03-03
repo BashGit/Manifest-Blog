@@ -3,6 +3,7 @@ Feature: Blog Comments
   As a Reader
   I want to be able to comment on a blog entry
 
+  @login_blogger
   @create_test_post
   @delete_test_post
   Scenario: View Blog Comments
@@ -12,6 +13,7 @@ Feature: Blog Comments
 
   # Use AJAX for this
   # do not want the page to refresh
+  @login_blogger
   @create_test_post
   @delete_test_post
   Scenario: Leave a comment (AJAX)
