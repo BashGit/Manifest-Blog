@@ -12,7 +12,7 @@
 
 <script>
 	$("#addCommentButton").on('click', function(){
-		if ($('#commenter').value != null && $('#content').value != null) {
+		if ($('#commenter').value? && $('#content').value?) {
 			$('#commenter').val("");
 			$('#content').val("");
 		}

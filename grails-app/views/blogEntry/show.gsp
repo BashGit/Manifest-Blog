@@ -7,6 +7,9 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
+		<g:if test="${flash.message}">
+			<div class="message" role="status">${flash.message}</div>
+		</g:if>
 		<div class="container">
 			<div id="show-blogEntry" class="content scaffold-show" role="main">
 				<g:if test="${blogEntryInstance?.title}">
