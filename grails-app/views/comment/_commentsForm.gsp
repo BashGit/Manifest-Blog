@@ -6,7 +6,7 @@
 	    	<g:link controller="comment" action="show" id="${c.id}" class="commenter">${c.commenter}</g:link>
 			said...</br>
 			<span class="commentContent">${c.content}</span></br>
-			on <g:formatDate format="dd-MM-yyyy hh:mm aa" date="${c.dateCreated}"/> </br>
+			on <g:formatDate date="${c.dateCreated}"/> </br>
 			</br>
 		</ul>
 	</g:each>
