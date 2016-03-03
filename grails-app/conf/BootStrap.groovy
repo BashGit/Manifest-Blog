@@ -4,14 +4,20 @@ class BootStrap {
 
     def init = { servletContext ->
 		
-		def adminRole = new Role(authority: 'ROLE_ADMIN', description: 'Blogger\'s Role').save()
-		def userRole = new Role(authority: 'ROLE_USER', description: 'Users of the blog').save()
+		def adminRole = Role.findByAuthority('ROLE_ADMIN') ?: new Role(authority: 'ROLE_ADMIN', description: 'Blogger\'s Role').save(failOnError: true)
+		def userRole = Role.findByAuthority('ROLE_USER') ?: new Role(authority: 'ROLE_USER', description: 'Users of the blog').save(failOnError: true)
 		
-		def blogger = new User(username: 'blogger',password: 'blog').save()
-		def blogUser = new User(username: 'user',password: 'password').save()
+		def blogger = User.findByUsername('blogger') ?: new User(username: 'blogger', password: 'blog', enabled: true).save(failOnError: true)
 		
-		UserRole.create blogger, adminRole
-		UserRole.create blogUser, userRole
+		if(!blogger.authorities.contains(adminRole)) {
+			UserRole.create blogger, adminRole
+		}
+		
+		def blogUser = User.findByUsername('user') ?: new User(username: 'user', password: 'password', enabled: true).save(failOnError: true)
+		
+		if(!blogUser.authorities.contains(userRole)) {
+			UserRole.create blogUser, userRole
+		}
 		
 		UserRole.withSession {
 			it.flush()

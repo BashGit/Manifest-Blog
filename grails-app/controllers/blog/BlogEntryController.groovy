@@ -2,6 +2,7 @@ package blog
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import grails.plugin.springsecurity.annotation.Secured
 
 @Transactional(readOnly = true)
 class BlogEntryController {
@@ -25,11 +26,13 @@ class BlogEntryController {
         respond blogEntryInstance
     }
 
+	@Secured(['ROLE_ADMIN'])
     def create() {
         respond new BlogEntry(params)
     }
 
     @Transactional
+	@Secured(['ROLE_ADMIN'])
     def save(BlogEntry blogEntryInstance) {
         if (blogEntryInstance == null) {
             notFound()
@@ -52,11 +55,13 @@ class BlogEntryController {
         }
     }
 
+	@Secured(['ROLE_ADMIN]'])
     def edit(BlogEntry blogEntryInstance) {
         respond blogEntryInstance
     }
 
     @Transactional
+	@Secured(['ROLE_ADMIN'])
     def update(BlogEntry blogEntryInstance) {
         if (blogEntryInstance == null) {
             notFound()
@@ -80,6 +85,7 @@ class BlogEntryController {
     }
 
     @Transactional
+	@Secured(['ROLE_ADMIN'])
     def delete(BlogEntry blogEntryInstance) {
 
         if (blogEntryInstance == null) {
