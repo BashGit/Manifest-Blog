@@ -86,7 +86,7 @@ class CommentController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'Comment.label', default: 'Comment'), commentInstance.id])
-                redirect action:"index", method:"GET"
+                redirect controller: "blogEntry", action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
         }
