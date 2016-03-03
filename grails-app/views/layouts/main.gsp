@@ -23,6 +23,15 @@
 		
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="col-md-2 vertical-center"><a class="home h3" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></div>
+				<div class="col-md-3 vertical-center"><g:link class="create h3" controller="blogEntry" action="create">New Blog Entry</g:link></div>
+				<div class="col-md-6"></div>
+				<div class="col-md-1 vertical-center"><a class="h3" href="blog/logout"/>Logout</a></div>
+			</div>
+		</div>
 	</head>
 	<body>
 		

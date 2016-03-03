@@ -8,14 +8,6 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<div class="navbar">
-			<div class="navbar-inner">
-				<div class="col-md-2 vertical-center"><a class="home h3" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></div>
-				<div class="col-md-3 vertical-center"><g:link class="create h3" controller="blogEntry" action="create">New Blog Entry</g:link></div>
-				<div class="col-md-6"></div>
-				<div class="col-md-1 vertical-center"><a class="h3" href="blog/logout"/>Logout</a></div>
-			</div>
-		</div>
 		<div id="show-comment" class="content scaffold-show" role="main">
 			<h1>Comment for '${commentInstance.entry.title}'</h1>
 			<g:if test="${flash.message}">
