@@ -41,7 +41,7 @@
 					<div class="col-md-1 vertical-center"><a class="h3" href="${createLink(uri: '/login/auth')}"/>Login</a></div>
 				</sec:ifNotLoggedIn>
 				<sec:ifLoggedIn>
-					<div class="col-md-1 vertical-center"><a class="h3" href="${createLink(uri: '/logout')}"/>Logout</a></div>
+					<div class="col-md-1 vertical-center"><a id="logout" class="h3" href="${createLink(uri: '/logout')}"/>Logout</a></div>
 				</sec:ifLoggedIn>
 			</div>
 		</div>

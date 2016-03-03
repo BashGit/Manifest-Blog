@@ -18,4 +18,8 @@ class Login
 		self.password = 'password'
 		self.submit
 	end
+	
+	def logout
+		browser.element(:id => 'logout').click()
+	end
 end
