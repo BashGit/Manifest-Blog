@@ -20,14 +20,11 @@
 				<g:if test="${blogEntryInstance?.title}">
 					<h1><span id="blog-title" class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${blogEntryInstance}" field="title"/></span></h1>
 				</g:if>
-				<g:if test="${flash.message}">
-				<div class="message" role="status">${flash.message}</div>
-				</g:if>
 				<ol class="property-list blogEntry">
 				
 					<g:if test="${blogEntryInstance?.entry}">
 					<li class="fieldcontain">
-						<span id="entry-label" class="property-label"><g:message code="blogEntry.entry.label" default="Entry" /></span>
+						<span id="entry-label" class="property-label"></span>
 						
 							<span class="property-value" aria-labelledby="entry-label"><pre style="background-color: white; border-color: #0099ff"><g:fieldValue bean="${blogEntryInstance}" field="entry"/></pre></span>
 						

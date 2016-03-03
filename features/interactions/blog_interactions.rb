@@ -38,22 +38,8 @@ def select_favorite_blog_post
 	@browser.div(:id => '0').a.click
 end
 
-def get_blog_post_url
-	@browser.url
-end
-
 def find_comments
 	on_page(Most_Recent_Blog_Post).comments
-end
-
-def calculate_expected_url
-	#expected_url = get_blog_post_url_beginning(actual_blog_post_url)
-	expected_url = 'http://localhost:8080/'
-	expected_url += 'blog/blog-entry/'
-	expected_url += get_post_id + '/'
-	expected_url += get_post_title + '/'
-	expected_url += get_post_date
-	#http://localhost:8080/blog/blog-entry/1/Hello-World/2016-02-26
 end
 
 def add_comment
