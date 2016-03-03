@@ -17,8 +17,11 @@ class BlogEntryController {
 			def results = BlogEntry.createCriteria().list (params) {
 					ilike("title", "%${params.query}%")
 			}
-			respond results, model:[blogEntryInstanceCount: BlogEntry.count()]
-			params.query = null
+			if(results.totalCount > 10) {
+				respond results, model:[blogEntryInstanceCount: BlogEntry.count()]
+			}else {
+				respond results
+			}
 		}		
     }
 
