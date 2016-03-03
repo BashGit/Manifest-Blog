@@ -27,9 +27,22 @@
 		<div class="navbar">
 			<div class="navbar-inner">
 				<div class="col-md-2 vertical-center"><a class="home h3" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></div>
-				<div class="col-md-3 vertical-center"><g:link class="create h3" controller="blogEntry" action="create">New Blog Entry</g:link></div>
+				<sec:ifNotLoggedIn>
+					<div class="col-md-3"></div>
+				</sec:ifNotLoggedIn>
+				<sec:ifAnyGranted roles="ROLE_USER">
+					<div class="col-md-3"></div>
+				</sec:ifAnyGranted>
+				<sec:ifAllGranted roles="ROLE_ADMIN">
+					<div class="col-md-3 vertical-center"><g:link class="create h3" controller="blogEntry" action="create">New Blog Entry</g:link></div>
+				</sec:ifAllGranted>
 				<div class="col-md-6"></div>
-				<div class="col-md-1 vertical-center"><a class="h3" href="blog/logout"/>Logout</a></div>
+				<sec:ifNotLoggedIn>
+					<div class="col-md-1 vertical-center"><a class="h3" href="${createLink(uri: '/login/auth')}"/>Login</a></div>
+				</sec:ifNotLoggedIn>
+				<sec:ifLoggedIn>
+					<div class="col-md-1 vertical-center"><a class="h3" href="${createLink(uri: '/logout')}"/>Logout</a></div>
+				</sec:ifLoggedIn>
 			</div>
 		</div>
 	</head>
