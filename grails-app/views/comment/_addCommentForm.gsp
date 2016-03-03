@@ -11,10 +11,11 @@
 </g:formRemote>
 
 <script>
+	sleep 5
 	$("#addCommentButton").on('click', function(){
 		if ($('#commenter').value? && $('#content').value?) {
-			$('#commenter').val("");
-			$('#content').val("");
+			$('#commenter').val(null);
+			$('#content').val(null);
 		}
 	});
 </script>

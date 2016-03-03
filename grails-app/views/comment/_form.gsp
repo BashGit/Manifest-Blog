@@ -25,5 +25,10 @@
 		<g:message code="comment.entry.label" default="Entry" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField id="entry" name="entry.id" value="${blogEntryInstance.id}"/>
+	<g:if test="${blogEntryInstance}">
+		<g:textField id="entry" name="entry.id" value="${blogEntryInstance.id}"/>
+	</g:if>
+	<g:else>
+		<g:textField id="entry" name="entry.id" value="${commentInstance.entry.id}"/>
+	</g:else>
 </div>
