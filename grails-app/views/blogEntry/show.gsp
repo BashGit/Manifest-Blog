@@ -20,9 +20,6 @@
 				<g:if test="${blogEntryInstance?.title}">
 					<h1><span id="blog-title" class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${blogEntryInstance}" field="title"/></span></h1>
 				</g:if>
-				<g:if test="${flash.message}">
-				<div class="message" role="status">${flash.message}</div>
-				</g:if>
 				<ol class="property-list blogEntry">
 				
 					<g:if test="${blogEntryInstance?.entry}">
