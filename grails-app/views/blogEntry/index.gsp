@@ -24,7 +24,8 @@
 		
 						<g:each in="${blogEntryInstanceList}" status="i" var="blogEntryInstance">
 					  		<div id="${i}" class="entry">
-					   		<h2><g:link action="show" params="[title:blogEntryInstance.title.replaceAll('\\s', '-'), dateCreated:blogEntryInstance.dateCreated.format('yyy-MM-dd')]" id="${blogEntryInstance.id}">${blogEntryInstance.title}</g:link></h2>
+					   		<h2><g:link action="show" params="[title:blogEntryInstance.title.replaceAll('\\s', '-'), 
+					   			dateCreated:blogEntryInstance.dateCreated.format('yyy-MM-dd')]" id="${blogEntryInstance.id}">${blogEntryInstance.title}</g:link></h2>
 					   		<span class="entry-date">Date Created: <g:formatDate date="${blogEntryInstance.dateCreated}"/></span>
 					   		<p><pre style="background-color: white; border-color: #0099ff" class="summary">${blogEntryInstance.entry}</pre></p>               
 					  		</div>  
@@ -32,7 +33,12 @@
 					 	</g:each>
 					</div>
 					<div class="pagination">
-						<g:paginate total="${blogEntryInstanceCount ?: 0}" />
+						<g:if test="${!params.query}">
+							<g:paginate total="${blogEntryInstanceCount ?: 0}" />
+						</g:if>
+						<g:else>
+							<g:paginate total="${blogEntryInstanceCount ?: 0}" params="[query:params.query]" />
+						</g:else>	
 					</div>
 				</div>
 			
