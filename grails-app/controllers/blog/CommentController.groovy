@@ -44,7 +44,7 @@ class CommentController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'comment.label', default: 'Comment'), commentInstance.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'comment.label', default: ''), commentInstance.id])
 				redirect(controller:"Comment", action:"renderComments", params:[blogEntryInstanceId: commentInstance.entry.id])
             }
             '*' { respond commentInstance, [status: CREATED] }

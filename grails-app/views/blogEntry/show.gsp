@@ -44,21 +44,26 @@
 					</li>
 					</g:if>
 					
+					<h4>Comments</h4>
+					<sec:ifAnyGranted roles="ROLE_USER, ROLE_ADMIN">
 					<div id="addComment">
 						<g:render template="/comment/addCommentForm"/>
 					</div>
+					</sec:ifAnyGranted>
 					
 					<div id="comments">
 						<g:render template="/comment/commentsForm"/>
 					</div>
 				
 				</ol>
-				<g:form url="[resource:blogEntryInstance, action:'delete']" method="DELETE">
-					<fieldset class="buttons">
-						<g:link class="edit" action="edit" resource="${blogEntryInstance}"><g:message code="custom.button.editBlogEntry.label" default="Edit" /></g:link>
-						<g:actionSubmit class="deleteBlogEntry" action="delete" value="${message(code: 'custom.button.deleteBlogEntry.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-					</fieldset>
-				</g:form>
+				<sec:ifAllGranted roles="ROLE_ADMIN">
+					<g:form url="[resource:blogEntryInstance, action:'delete']" method="DELETE">
+						<fieldset class="buttons">
+							<g:link class="edit" action="edit" resource="${blogEntryInstance}"><g:message code="custom.button.editBlogEntry.label" default="Edit" /></g:link>
+							<g:actionSubmit class="deleteBlogEntry" action="delete" value="${message(code: 'custom.button.deleteBlogEntry.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+						</fieldset>
+					</g:form>
+				</sec:ifAllGranted>
 			</div>
 		</div>
 	</body>
