@@ -74,7 +74,7 @@ class CommentController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Comment.label', default: 'Comment'), commentInstance.id])
-                redirect commentInstance
+				redirect commentInstance.entry
             }
             '*'{ respond commentInstance, [status: OK] }
         }
