@@ -12,13 +12,15 @@
 *= require_self
 */
 
-.summary {
+.summary, .fullBlogEntry {
 	white-space: -moz-pre-wrap;
 	white-space: -pre-wrap;
 	white-space: -o-pre-wrap;
 	white-space: pre-wrap;
 	word-wrap: break-word;
 	word-break: break-word;
+	background-color: white; 
+	border-color: #0099ff;
 }
 
 .commentContent {
