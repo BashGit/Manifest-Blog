@@ -25,7 +25,7 @@ end
 def delete_test_post
 	visit_favorite_blogger
 	select_favorite_blog_post
-	@browser.button(:class => 'delete').click
+	@browser.button(:class => 'deleteBlogEntry').click
 	sleep 1
 	@browser.alert.ok
 end

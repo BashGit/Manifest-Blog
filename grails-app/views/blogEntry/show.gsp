@@ -56,7 +56,7 @@
 				<g:form url="[resource:blogEntryInstance, action:'delete']" method="DELETE">
 					<fieldset class="buttons">
 						<g:link class="edit" action="edit" resource="${blogEntryInstance}"><g:message code="custom.button.editBlogEntry.label" default="Edit" /></g:link>
-						<g:actionSubmit class="delete" action="delete" value="${message(code: 'custom.button.deleteBlogEntry.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+						<g:actionSubmit class="deleteBlogEntry" action="delete" value="${message(code: 'custom.button.deleteBlogEntry.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 					</fieldset>
 				</g:form>
 			</div>

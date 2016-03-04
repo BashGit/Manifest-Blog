@@ -21,5 +21,4 @@ Then (/^my genius comment is at the top of the blog post comments$/) do
 	top_comment = get_top_comment
 	expect(top_comment).to include('Adele said...')
 	expect(top_comment).to include('Hello!')
-	delete_test_comment
 end
