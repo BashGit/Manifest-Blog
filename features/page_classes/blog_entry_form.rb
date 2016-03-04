@@ -4,7 +4,7 @@ class Blog_Entry_Form
 	page_url 'http://localhost:8080/blog/blogEntry/create'
 	
 	text_field(:title, :name => 'title')
-	text_field(:entry, :name => 'entry')
+	text_area(:entry, :name => 'entry')
 	button(:submit, :name => 'create')
 	
 	def complete_entry_form

@@ -28,3 +28,15 @@ end
 After('@delete_test_post') do |scenario|
 	delete_test_post 
 end
+
+Before('@create_ten_test_posts') do |scenario|
+	(0..9).each do |i|
+		publish_new_post
+	end
+end
+
+After('@delete_ten_test_posts') do |scenario|
+	(0..9).each do |i|
+		delete_test_post
+	end
+end

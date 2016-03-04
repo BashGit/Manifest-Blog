@@ -6,6 +6,7 @@ Feature: Blog Comments
   @login_blogger
   @create_test_post
   @delete_test_post
+  @logout
   Scenario: View Blog Comments
     Given I visit the blog for my favorite blogger
     When I choose a blog post
@@ -16,6 +17,7 @@ Feature: Blog Comments
   @login_blogger
   @create_test_post
   @delete_test_post
+  @logout
   Scenario: Leave a comment (AJAX)
     Given I am reading a blog post from my favorite blogger
     When I add my genius comment to the blog post
